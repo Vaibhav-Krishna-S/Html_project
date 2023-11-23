@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <link rel="stylesheet" href="project217css.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var studentList = document.getElementById('studentList');
+    
+            // Retrieve all keys from localStorage
+            var localStorageKeys = Object.keys(localStorage);
+    
+            // Filter keys that represent student data
+            var studentKeys = localStorageKeys.filter(function(key) {
+                return key.startsWith('student_');
+            });
+    
+            // Iterate over student keys and display the data
+            studentKeys.forEach(function(studentKey) {
+                var studentData = JSON.parse(localStorage.getItem(studentKey));
+    
+                var listItem = document.createElement('li');
+                listItem.textContent = studentData.name + ' - ' + studentData.course;
+                studentList.appendChild(listItem);
+            });
+        });
+    </script>
+    
+</head>
+<body>
+
+    <header>
+        <h1>Student List</h1>
+    </header>
+
+    <section id="studentList">
+        <!-- Student list will be dynamically populated here -->
+    </section>
+
+    <footer>
+        <p>&copy; 2023 CSE(AI&ML) Management System</p>
+    </footer>
+
+    <!-- Add the modified script here -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var studentList = document.getElementById('studentList');
+
+            // Example data, replace with your actual data retrieval logic
+            var studentsData = ['Student1 - DBMS', 'Student2 - COA', 'Student3 - R Programming'];
+
+            studentsData.forEach(function(student) {
+                var listItem = document.createElement('li');
+                listItem.textContent = student;
+                studentList.appendChild(listItem);
+            });
+        });
+    </script>
+
+</body>
+</html>

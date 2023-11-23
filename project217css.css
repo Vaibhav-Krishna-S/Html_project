@@ -1,0 +1,107 @@
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #222;
+    padding: 1em;
+    text-align: center;
+}
+
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: #222;
+    padding: 1em;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #66c2ff;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #ffffff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.form {
+    max-width: 400px;
+    margin: auto;
+}
+
+form label {
+    display: block;
+    margin: 10px 0;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Dark theme for lists */
+ul {
+    background-color: #444;
+    padding: 10px;
+    list-style: none;
+}
+
+li {
+    padding: 8px;
+    border-bottom: 1px solid #666;
+}
+
+/* Apply dark theme to navigation links in the section */
+section nav a {
+    color: #66c2ff;
+}
