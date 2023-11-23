@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management System</title>
+    <link rel="stylesheet" href="project217css.css">
+    
+    <script>
+        function addStudent() {
+            var studentName = document.getElementById('studentName').value;
+            var course = document.getElementById('course').value;
+
+            // Create a unique identifier for each student entry
+            var studentId = 'student_' + new Date().getTime();
+
+            // Create an object with student details
+            var studentData = {
+                id: studentId,
+                name: studentName,
+                course: course
+            };
+
+            // Store the student data in localStorage
+            localStorage.setItem(studentId, JSON.stringify(studentData));
+
+            var listItem = document.createElement('li');
+            listItem.textContent = studentName + ' - ' + course;
+
+            var studentList = document.getElementById('studentList');
+            studentList.appendChild(listItem);
+
+            document.getElementById('studentName').value = '';
+            document.getElementById('course').value = '';
+        }
+
+        function redirectToStudentListPage() {
+            // Redirect to the new student list page
+            window.location.href = 'new_student.html';
+        }
+
+        function redirectToContactPage() {
+            // Redirect to the contact page
+            window.location.href = 'contact.html';
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNp5YTN6a35Urn2Fp74BO1bU3jZPaqOIPCgAdsK-WDTQ&s" alt="College Logo">
+        <h1>CSE(AIML) Management System</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#students">Students</a></li>
+            <li><a href="#faculty">Faculty</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact" onclick="redirectToContactPage()">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h2>Welcome to our KPR College Management System</h2>
+        <p>This system helps in managing various aspects of the college.</p>
+        <a href="#contact" class="button">Contact Us</a>
+    </section>
+
+    <section id="courses">
+        <h2>Courses</h2>
+        <ul>
+            <li>DBMS</li>
+            <li>R PROGRAMMING</li>
+            <li>Mathematics</li>
+            <li>Data Structures & Algorithms</li>
+            <li>Computer Organization & Architecture</li>
+            <li>Java Programming</li>
+        </ul>
+        <button class="button">View All Courses</button>
+    </section>
+
+    <section id="faculty">
+        <h2>Faculty</h2>
+        <p>
+            The Department of CSE(AI&ML) has one of the most experienced professors in KPRIET.
+            They have direct linkage with the industries.
+        </p>
+        
+        <button id="meetFacultyButton" class="button" onclick="redirectToFacultyPage()">Meet the Faculty</button>
+        <script>
+            function redirectToFacultyPage() {
+                // Redirect to the faculty page
+                window.location.href = 'faculty.html';
+            }
+        </script>
+    </section>
+
+    <section id="students">
+        <h2>Students</h2>
+        <ul id="studentList"></ul>
+        <form action="#" method="post" class="form" id="studentForm">
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" name="studentName" required>
+            <label for="course">Course:</label>
+            <select id="course" name="course">
+                <option value="DBMS">DBMS</option>
+                <option value="COA">COA</option>
+                <option value="R Programming">R Programming</option>
+                <option value="Data Structures">Data Structures</option>
+                <option value="Java Programming">Java Programming</option>
+                <option value="Mathematics">Mathematics</option>
+            </select>
+            <button type="button" onclick="addStudent()" class="button">Add Student</button>
+            <button type="button" onclick="redirectToStudentListPage()" class="button">Show Students</button>
+        </form>
+    </section>
+
+    <section id="events">
+        <h2>Events</h2>
+        <ul>
+            <li>NeuraNest Tech talk on 21/11/23</li>
+            <li>AI Quiz on 22/11/23</li>
+            <li>ML Day on 23/11/23</li>
+        </ul>
+        
+        <a href="#contact" class="button">Register for Events</a>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>
+            For any inquiries, please reach out to us through the following channels:
+        </p>
+        <ul>
+            <li>Email: info@kprcollege.com</li>
+            <li>Phone: +91 123 456 7890</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 CSE(AI&ML) Management System</p>
+    </footer>
+
+    <!-- Other sections remain unchanged -->
+
+    <script>
+        // Function addStudent() and redirectToStudentListPage() remain unchanged
+    </script>
+
+</body>
+</html>
